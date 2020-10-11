@@ -5,7 +5,7 @@ router
   .route('/')
   .get(async (req, res) => {
     const users = await usersService.getAll();
-    res.json(users);
+    await res.json(users);
   })
   .post(async (req, res) => {
     const response = await usersService.create(req.body);

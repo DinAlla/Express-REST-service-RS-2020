@@ -31,6 +31,12 @@ const getById = async userId => {
 const updateById = async (userId, userData) => {
   try {
     const index = users.findIndex(user => user.id === userId);
+    if (index === -1) {
+      return {
+        status: 404,
+        error: `User with id: ${userId} does not defined.`
+      };
+    }
     users[index] = {
       ...users[index],
       ...userData
@@ -53,7 +59,7 @@ const deleteById = async userId => {
     await users.splice(index, 1);
     return {
       status: 200,
-      success: `USer with id:${userId} successfully deleted.`
+      success: `User with id:${userId} successfully deleted.`
     };
   } catch {
     return { status: 500, error: 'Something went wrong.' };
