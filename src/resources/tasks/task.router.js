@@ -16,7 +16,7 @@ router
   .route('/:boardId/tasks/:taskId')
   .get(async (req, res) => {
     const { boardId, taskId } = req.params;
-    const response = tasksService.getById(boardId, taskId);
+    const response = await tasksService.getById(boardId, taskId);
     await res.status(response.status).send(response.task || response.error);
   })
   .put(async (req, res) => {

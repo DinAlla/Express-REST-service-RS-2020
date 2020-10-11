@@ -19,6 +19,12 @@ const create = async body => {
 const getById = async id => {
   try {
     const foundBoard = await boards.find(board => board.id === id);
+    if (!foundBoard) {
+      return {
+        status: 404,
+        error: `Board with id: ${id} does not defined.`
+      };
+    }
     return { status: 200, board: foundBoard };
   } catch {
     return { status: 500, error: 'Something went wrong.' };
