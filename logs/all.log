@@ -16,3 +16,6 @@
 {"message":"method=POST url=/drer params={} body={}","level":"info","timestamp":"2020-10-15 14:18:13"}
 {"message":"method=POST url=/drer params={} body={}","level":"info","timestamp":"2020-10-15 14:18:33"}
 {"message":"method=POST url=/drer params={} body={}","level":"info","timestamp":"2020-10-15 14:22:29"}
+{"message":"[Unhandled Rejection] Error: Oops, promise rejected!","level":"error","timestamp":"2020-10-19 17:03:36"}
+{"message":"[Uncaught Exception] Error: Uncaught error","level":"error","timestamp":"2020-10-19 17:06:09"}
+{"message":"Shutting down...","level":"info","timestamp":"2020-10-19 17:06:09"}

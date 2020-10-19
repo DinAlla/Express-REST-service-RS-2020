@@ -19,8 +19,6 @@ app.use('/doc', swaggerUI.serve, swaggerUI.setup(swaggerDocument));
 process.on('uncaughtException', err => {
   logger.error(`[Uncaught Exception] ${err.name}: ${err.message}`);
   logger.info('Shutting down...');
-  // eslint-disable-next-line no-process-exit
-  process.exit(1);
 });
 
 process.on('unhandledRejection', reason => {
@@ -31,6 +29,7 @@ process.on('NOT_FOUND', reason => {
   logger.error(`[Url not found] ${reason}`);
 });
 
+// Логирование всех запросов
 app.use('/', (req, res, next) => {
   if (req.originalUrl === '/') {
     res.send('Service is running!');
